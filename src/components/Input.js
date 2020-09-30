@@ -12,7 +12,7 @@ function Input({ shortenUrl, validError }) {
         onSearch={shortenUrl}
         id="url-input"
       />
-      <label htmlFor="url-input" style={{ visibility: "hidden" }}>
+      <label htmlFor="url-input" className="visuallyhidden">
         URL Input
       </label>
       {validError && <span className="error">{validError}</span>}
