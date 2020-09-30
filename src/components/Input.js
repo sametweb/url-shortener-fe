@@ -5,9 +5,6 @@ import Search from "antd/lib/input/Search";
 function Input({ shortenUrl, validError }) {
   return (
     <>
-      <label htmlFor="url-input" style={{ display: "none" }}>
-        URL Input
-      </label>
       <Search
         placeholder="Input long URL"
         enterButton="Shorten"
@@ -15,6 +12,9 @@ function Input({ shortenUrl, validError }) {
         onSearch={shortenUrl}
         id="url-input"
       />
+      <label htmlFor="url-input" style={{ visibility: "hidden" }}>
+        URL Input
+      </label>
       {validError && <span className="error">{validError}</span>}
     </>
   );
