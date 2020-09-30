@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { Menu } from "antd";
-import { Layout } from "antd";
+import { Menu, Layout } from "antd";
+import logo from "../logo.png";
 
 function Header() {
   const location = useLocation();
@@ -11,7 +11,7 @@ function Header() {
     <Layout.Header>
       <span className="logo">
         <Link to="/" alt="omitURL url shortening service">
-          omitURL
+          <img src={logo} alt="omitURL - free URL shortening service" /> omitURL
         </Link>
       </span>
       <Menu theme="dark" mode="horizontal" selectedKeys={[location.pathname]}>
