@@ -1,11 +1,11 @@
 import React from "react";
 
-import Search from "antd/lib/input/Search";
+import { Input as AntdInput } from "antd";
 
 function Input({ shortenUrl, validError }) {
   return (
     <>
-      <Search
+      <AntdInput.Search
         placeholder="Input long URL"
         enterButton="Shorten"
         size="large"

@@ -6,8 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import { Row, Col } from "antd";
-import { Layout } from "antd";
+import { Row, Col, Layout } from "antd";
 
 import InputArea from "./components/InputArea";
 import Header from "./components/Header";
