@@ -15,6 +15,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 
 function App() {
+  console.log(process.env.BACK_END);
   return (
     <Router>
       <Layout className="wrapper">
