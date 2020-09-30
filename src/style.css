@@ -19,9 +19,6 @@ body,
   border-color: #001529;
 }
 
-.ant-btn-primary:hover {
-}
-
 .ant-spin-nested-loading {
   width: 100%;
 }
