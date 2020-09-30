@@ -22,7 +22,7 @@ function InputArea() {
       axios
         .post(process.env.REACT_APP_BACK_END, { url })
         .then((res) => {
-          setShortened(`${window.location.href}${res.data.id}`);
+          setShortened(`${process.env.REACT_APP_BACK_END}/${res.data.id}`);
         })
         .catch((err) => {
           console.log(err);
