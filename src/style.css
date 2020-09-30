@@ -14,6 +14,14 @@ body,
   height: 100%;
 }
 
+.ant-btn-primary {
+  background-color: #001529;
+  border-color: #001529;
+}
+
+.ant-btn-primary:hover {
+}
+
 .ant-spin-nested-loading {
   width: 100%;
 }
@@ -76,4 +84,8 @@ body,
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+footer a {
+  color: #00386d;
 }
