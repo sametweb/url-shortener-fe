@@ -8,4 +8,4 @@ Environment variables:
 
 | Key | Value |
 | --- | --- |
-| `REACT_APP_BACK_END` | The url for the deployed back-end app, avoid trailing slash (/) Example: `https://ou.tc` |
+| `REACT_APP_BACK_END` | The url for the deployed back-end app, avoid trailing slash (`/`) Example: `https://ou.tc` |
