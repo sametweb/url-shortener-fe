@@ -1,6 +1,6 @@
 # url-shortener-fe
 
-URL shortening app front-end repository
+URL shortening app front-end repository. For the back-end, please refer to [url-shortener repository](https://github.com/sametweb/url-shortener).
 
 The application is deployed on https://omiturl.com
 
