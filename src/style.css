@@ -23,6 +23,12 @@ body,
   width: 100%;
 }
 
+.ant-dropdown-button button {
+  background: #001529;
+  border-color: #001529;
+  color: white;
+}
+
 .wrapper {
   height: 100%;
   display: flex;
