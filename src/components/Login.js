@@ -1,14 +1,16 @@
 import React, { useContext, useEffect } from "react";
+
 import { useHistory } from "react-router-dom";
+
 import { AuthContext } from "../App";
 
 function Login() {
-  const { user, signIn } = useContext(AuthContext);
+  const { idToken, signIn } = useContext(AuthContext);
   const { push } = useHistory();
 
   useEffect(() => {
-    user?.email && push("/");
-  }, [user, push]);
+    idToken && push("/");
+  }, [idToken, push]);
 
   return (
     <button onClick={signIn} id="login">

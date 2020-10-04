@@ -8,7 +8,7 @@ import { AuthContext } from "../App";
 import Avatar from "antd/lib/avatar/avatar";
 
 function Header() {
-  const { user } = useContext(AuthContext);
+  const { user, idToken } = useContext(AuthContext);
   const location = useLocation();
 
   return (
@@ -22,16 +22,16 @@ function Header() {
         <Menu.Item key="/about">
           <Link to="/about">About</Link>
         </Menu.Item>
-        {!user?.email ? (
+        {!idToken ? (
           <Menu.Item key="/login">
             <Link to="/login">Login</Link>
           </Menu.Item>
         ) : (
-          // <Menu.Item key="/logout">
-          <Link to="/logout" style={{ marginLeft: 20 }}>
-            <Avatar size="small" src={user.photoURL} />
-          </Link>
-          // </Menu.Item>
+          <Menu.Item key="/logout">
+            <Link to="/logout" style={{ marginLeft: 20 }}>
+              <Avatar size="small" src={user?.photoURL} />
+            </Link>
+          </Menu.Item>
         )}
       </Menu>
     </Layout.Header>

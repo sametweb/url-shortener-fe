@@ -21,21 +21,25 @@ export const AuthContext = React.createContext();
 
 function App() {
   const [user, setUser] = useState(null);
+  const [idToken, setIdToken] = useState(null);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log({ user });
       if (user) {
         const { displayName, email, photoURL } = user;
+
+        user.getIdToken(true).then(setIdToken);
+
         setUser({ displayName, email, photoURL });
       } else {
         setUser(null);
+        setIdToken(null);
       }
     });
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, idToken, signIn, signOut }}>
       <Router>
         <Layout className="wrapper">
           <Route path="/" component={Header} />

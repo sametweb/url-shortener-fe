@@ -1,15 +1,17 @@
 import React, { useContext, useEffect } from "react";
+
 import { useHistory } from "react-router-dom";
+
 import { AuthContext } from "../App";
 
-function Logout(props) {
-  const { user, signOut } = useContext(AuthContext);
+function Logout() {
+  const { idToken, signOut } = useContext(AuthContext);
   const { push } = useHistory();
 
   useEffect(() => {
     signOut();
-    !user?.email && push("/");
-  }, [user, push, signOut]);
+    !idToken && push("/");
+  }, [idToken, push, signOut]);
 
   return <div>Logging out...</div>;
 }
