@@ -22,7 +22,7 @@ export const AuthContext = React.createContext();
 function App() {
   const [user, setUser] = useState(null);
   const [idToken, setIdToken] = useState(null);
-
+  console.log({ idToken });
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
