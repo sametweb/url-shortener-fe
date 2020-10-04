@@ -18,6 +18,7 @@ function InputArea() {
 
   const shortenUrl = (url) => {
     const isValid = validateUrl(url);
+
     setLoading(true);
     if (isValid) {
       resetState();
