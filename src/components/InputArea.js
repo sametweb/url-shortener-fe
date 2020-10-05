@@ -26,7 +26,7 @@ function InputArea() {
     if (isValid) {
       resetState();
       axiosWithAuth()
-        .post("/", { url, idToken: idToken || 0 })
+        .post("/", { url, idToken: idToken || "0" })
         .then((res) => {
           setShortened(`${process.env.REACT_APP_BACK_END}/${res.data.id}`);
           setLoading(false);
