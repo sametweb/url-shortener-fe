@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export default (token) =>
-  axios.create({
-    baseURL: process.env.REACT_APP_BACK_END,
-    headers: {
-      Authorization: token,
-    },
-  });
+export default (token) => {
+  const params = { baseURL: process.env.REACT_APP_BACK_END };
+  if (token) {
+    params.headers = { Authorization: token };
+  }
+  return axios.create(params);
+};
