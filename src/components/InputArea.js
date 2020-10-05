@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../App";
 
 import validateUrl from "../utils/validateUrl";
+import axiosWithAuth from "../utils/axiosWithAuth";
+
 import Output from "./Output";
 import Input from "./Input";
 import { Spin } from "antd";
@@ -10,6 +12,7 @@ function InputArea() {
   const [shortened, setShortened] = useState("");
   const [validError, setValidError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { idToken } = useContext(AuthContext);
 
   const resetState = () => {
     setValidError("");
@@ -22,8 +25,8 @@ function InputArea() {
     setLoading(true);
     if (isValid) {
       resetState();
-      axios
-        .post(process.env.REACT_APP_BACK_END, { url })
+      axiosWithAuth(idToken)
+        .post("/", { url })
         .then((res) => {
           setShortened(`${process.env.REACT_APP_BACK_END}/${res.data.id}`);
           setLoading(false);
