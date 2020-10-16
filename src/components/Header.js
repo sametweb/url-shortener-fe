@@ -22,7 +22,7 @@ function Header() {
         <Menu.Item key="/about">
           <Link to="/about">About</Link>
         </Menu.Item>
-        {!idToken ? (
+        {/* {!idToken ? (
           <Menu.Item key="/login">
             <Link to="/login">Login</Link>
           </Menu.Item>
@@ -32,7 +32,7 @@ function Header() {
               <Avatar size="small" src={user?.photoURL} />
             </Link>
           </Menu.Item>
-        )}
+        )} */}
       </Menu>
     </Layout.Header>
   );
