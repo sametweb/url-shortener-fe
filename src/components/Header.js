@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { Menu, Layout } from "antd";
 import logo from "../logo.png";
 
-import { AuthContext } from "../App";
-import Avatar from "antd/lib/avatar/avatar";
+// import { AuthContext } from "../App";
+// import Avatar from "antd/lib/avatar/avatar";
 
 function Header() {
-  const { user, idToken } = useContext(AuthContext);
+  // const { user, idToken } = useContext(AuthContext);
   const location = useLocation();
 
   return (
