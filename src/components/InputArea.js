@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../App";
+import React, { useState } from "react";
+// import { AuthContext } from "../App";
 
 import validateUrl from "../utils/validateUrl";
 import axiosWithAuth from "../utils/axiosWithAuth";
@@ -12,7 +12,7 @@ function InputArea() {
   const [shortened, setShortened] = useState("");
   const [validError, setValidError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { idToken } = useContext(AuthContext);
+  // const { idToken } = useContext(AuthContext);
 
   const resetState = () => {
     setValidError("");
@@ -22,23 +22,24 @@ function InputArea() {
   const shortenUrl = (url) => {
     const isValid = validateUrl(url);
 
-    setLoading(true);
     if (isValid) {
       resetState();
+      setLoading(true);
+
       axiosWithAuth()
-        .post("/", { url, idToken: idToken || "0" })
+        .post("/", { url })
         .then((res) => {
           setShortened(`${process.env.REACT_APP_BACK_END}/${res.data.id}`);
-          setLoading(false);
         })
         .catch((err) => {
           console.log(err);
-          setLoading(false);
+          setValidError("There was a problem performing your request.");
         });
     } else {
       setShortened("");
       setValidError("Invalid URL");
     }
+    setLoading(false);
   };
 
   return shortened ? (
