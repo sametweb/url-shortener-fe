@@ -19,6 +19,15 @@ function Header() {
         </Link>
       </span>
       <Menu theme="dark" mode="horizontal" selectedKeys={[location.pathname]}>
+        <Menu.Item key="/chrome-extension">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://chrome.google.com/webstore/detail/omiturl/dpcjidcjfkjmfgobplfiaofmebakhobc"
+          >
+            Chrome Extension
+          </a>
+        </Menu.Item>
         <Menu.Item key="/about">
           <Link to="/about">About</Link>
         </Menu.Item>
